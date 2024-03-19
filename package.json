@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "build": "vue-tsc && vite build --base=./",
+    "preview": "vite preview",
+    "deploy": "gh-pags -d dist"
   },
   "dependencies": {
     "vue": "^3.4.19"
