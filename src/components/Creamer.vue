@@ -9,24 +9,24 @@ import { computed } from "vue";
 type Prop = {
   name: string;
 };
-type Creamer = {
-  name: string;
-  color: string;
-};
-const Creamers: Creamer[] = [
-  {
-    name: "Milk",
-    color: "AliceBlue",
-  },
-  {
-    name: "Cream",
-    color: "#F5F5DC",
-  },
-  {
-    name: "Half & Half",
-    color: "#FFFACD",
-  },
-];
+// type Creamer = {
+//   name: string;
+//   color: string;
+// };
+// const Creamers: Creamer[] = [
+//   {
+//     name: "Milk",
+//     color: "AliceBlue",
+//   },
+//   {
+//     name: "Cream",
+//     color: "#F5F5DC",
+//   },
+//   {
+//     name: "Half & Half",
+//     color: "#FFFACD",
+//   },
+// ];
 
 const props = withDefaults(defineProps<Prop>(), {
   name: "Milk",
