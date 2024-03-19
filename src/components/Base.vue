@@ -1,5 +1,5 @@
 <template>
-  <div class="baseBeverage"></div>
+  <div class="baseBeverage" :style="customStyle"></div>
 </template>
 
 <script setup lang="ts">
@@ -29,10 +29,29 @@ const Bases: BaseBeverage[] = [
 const props = withDefaults(defineProps<Prop>(), {
   name: "Black Tea",
 });
+
+
+const customStyle = computed(() => {
+    let color = ""
+    if (props.name == "Black Tea"){
+      color = "#8B4513"
+    }
+    if (props.name == "Green Tea"){
+      color = "#C8E6C9"
+    }
+    if (props.name == "Coffee"){
+      color = "#6F4E37"
+    }
+    return {
+      
+        backgroundColor: color,
+    };
+});
 </script>
 
 <style scoped>
 .baseBeverage {
+  
   position: relative;
   width: 100%;
   height: 100%;

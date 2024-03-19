@@ -7,10 +7,10 @@
         <Creamer :name="creamer" />
       </template>
       <template v-slot:mid>
-        <Syrup />
+        <Syrup :name="syrup"/>
       </template>
       <template v-slot:bottom>
-        <Base />
+        <Base :name="beverage"/>
       </template>
     </Contents>
   </Mug>

@@ -1,5 +1,5 @@
 <template>
-  <div class="syrup"></div>
+  <div class="syrup" :style="customStyle"></div>
 </template>
 
 <script setup lang="ts">
@@ -29,6 +29,28 @@ const Syrups: Syrup[] = [
 const props = withDefaults(defineProps<Prop>(), {
   name: "Vanilla",
 });
+
+const customStyle = computed(() => {
+    let color = ""
+    let height = ""
+    if (props.name == "Vanilla"){
+      color = "#FFEFD5"
+    }
+    if (props.name == "Caramel"){
+      color = "#DAA520"
+    }
+    if (props.name == "Hazelnut"){
+      color = "#6B4423"
+    }
+    if (props.name == "None"){
+       height = "0%"
+    }
+    return {
+        //backgroundColor: color,
+        height: height,
+        background: "repeating-linear-gradient(45deg," + color + ", " + color + " 10px,rgba(225, 207, 149, 1) 10px,rgba(225, 207, 149, 1) 20px)"
+    }
+});
 </script>
 <style lang="scss" scoped>
 .syrup {
@@ -37,6 +59,6 @@ const props = withDefaults(defineProps<Prop>(), {
   width: 100%;
   height: 20%;
   animation: pour-tea 2s 1s forwards;
-  z-index: 2;
+  z-index: 0;
 }
 </style>
